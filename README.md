@@ -4,7 +4,7 @@ Online shop for cake, bread and desserts
 ![yummyCake drawio](https://user-images.githubusercontent.com/57296136/187789201-c3c79bc2-cb6f-40be-90dd-7c98cbc021e6.png)
 
 
-Requirments
+# Requirments
 
 
 Designing an e-commerce website for a cake shop requires attention to detail and a focus on creating an attractive and user-friendly interface that will attract and retain customers. Here are some key elements to consider when designing a cake e-commerce site:
