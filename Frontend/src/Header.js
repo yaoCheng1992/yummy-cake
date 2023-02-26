@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'  
 import logo from './logo.svg'
 import './style.css'
+import { Link } from "react-router-dom";
 function Header() {
     return <div className="  ">
         <div className=" bg-gold shadow-xl mb-24 h-11 grid grid-cols-10 grid-rows-1">
@@ -24,7 +25,9 @@ function Header() {
                 </label>
             </form> 
             <div className="col-span-2  place-self-center divide-x   divide-white">
-                <button className=" pr-6">Login</button>
+                <button className=" pr-6">
+                    <Link to='/login'>Login</Link>
+                </button>
                 <button className=" pl-6">Register</button>
             </div>
 
