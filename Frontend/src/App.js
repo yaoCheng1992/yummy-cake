@@ -6,7 +6,7 @@ import Main from './Main';
 import Footer from './Footer';
 function App(props) {
 
-  return <div className="bg-third ">
+  return <div className=" ">
     <Header></Header>
     <Main></Main>
     <Footer></Footer>
