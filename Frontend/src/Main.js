@@ -50,7 +50,6 @@ function Main() {
             price: '1.5',
             name: 'cake'
         },
-
     ]
     return <div className="pt-8">
         <BannerSwiper ></BannerSwiper>
@@ -76,8 +75,6 @@ function Main() {
                     </form>
                 </div>
             })}
-
-
         </div>
         <div className="grid mt-8 overflow-visible mx-48  grid-cols-3 space-x-4 mb-8  shadow-lg shadow-gold divide-x-1 divide-x-blue">
             <div className="   text-center relative col-span-2 px-2 py-6 flex space-x-3">

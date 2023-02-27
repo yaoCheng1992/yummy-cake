@@ -24,7 +24,7 @@ function BannerSwiper(props) {
         timer = setTimeout(() => {
             setDi(0)
             clearTimeout(timer.current) 
-        }, 400)
+        }, 4000)
 
     }
     function nextImg() {

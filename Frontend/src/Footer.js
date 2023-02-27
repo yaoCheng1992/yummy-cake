@@ -1,12 +1,11 @@
 import React from "react";
-
+consoel.log('----')
 function Footer() {
     return <div className="px-32 py-24 bg-blue">
         <div className="grid grid-cols-4">
             <div className="px-5">
                 <div className="font-bold mb-3 text-second">LOCATION</div>
                 <div className="mb-2 text-white">Danila kisa 14,Novi Sad</div>
-
                 <div className="font-bold mb-3 text-second">HOURS</div>
                 <div className="mb-2 text-white">
                     <div>WEEKDAYS 7 A.M - 7 P.M</div>
