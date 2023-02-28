@@ -1,14 +1,15 @@
 .im-right {
  left:100%;
- z-index:49;
+
 }
 .move-left {
   transform: translateX(-100%);
+  z-index:49;
 }
 .im-left{
-  left:-100%;
-  z-index:49;
+  left:-100%; 
 }
 .move-right {
   transform: translateX(100%);
+  z-index:49;
 }
