@@ -11,7 +11,6 @@ function Header() {
                 <button className="text-left">CHECK OUT</button>
                 <div className="flex place-self-center space-x-2 cursor-pointer">
                 <FontAwesomeIcon   icon='fa-cart-shopping' size="lg" /> 
-
                     <div>Cart </div>
                     <div>$320</div>
                 </div>
@@ -20,8 +19,7 @@ function Header() {
                 <input className="focus:outline-none focus:shadow-xl w-full h-full pl-4 " type="text" name="keyword" />
                 <label htmlFor="search" className="absolute right-0 px-4 pt-2 h-full cursor-pointer ">
                     <input id="search" type="submit" className="hidden" value="" />
-                    <FontAwesomeIcon className=" " icon="fa-magnifying-glass" size="lg" /> 
-                     
+                    <FontAwesomeIcon className=" " icon="fa-magnifying-glass" size="lg" />                      
                 </label>
             </form> 
             <div className="col-span-2  place-self-center divide-x   divide-white">
@@ -33,7 +31,7 @@ function Header() {
 
         </div>
         
-        <div className="bg-blue   font-bold text-shadow-xl grid  place-items-center grid-cols-6  h-24 px-36  before:content-[*] before:absolute before:bg-white before:mt-0.5 before:w-full before:h-0.5">         
+        <div className="bg-blue  font-bold text-shadow-xl grid  place-items-center grid-cols-6  h-24 px-36  before:content-[*] before:absolute before:bg-white before:mt-0.5 before:w-full before:h-0.5">         
 
             <div className="">
                 <a href="" className="stroke-yao">HOME</a>

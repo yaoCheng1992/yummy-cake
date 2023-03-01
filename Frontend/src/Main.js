@@ -54,14 +54,13 @@ function Main() {
             price: '1.5',
             name: 'cake'
         },
-
     ]
     return <div>
         <Header></Header>
         <div className="pt-8">
             
             <BannerSwiper ></BannerSwiper>
-            <div className="grid  mt-4 mx-48 grid-cols-3 gap-4 space-x-4  ">
+            <div className="grid  mt-4 mx-8 grid-cols-1 sm:mx-48 lg:grid-cols-3 gap-4 space-x-4  ">
                 {pros.map((item, id) => {
                     return <div className="text-center shadow-2xl p-4" key={id}>
                         <div className="font-bold bg-gold leading-10 -mx-4 ">OUR CAKES</div>
@@ -69,7 +68,7 @@ function Main() {
                             <div className="border-4 mb-4 border-blue h-32">
                                 <img className="position inset-0 w-full h-full object-cover" src={item.img} />
                             </div>
-                            <div className="text-left text-xs  min-h-[120px]">
+                            <div className="text-left text-xs  min-h-[60px]">
                                 {item.desc}
                             </div>
                         </div>
@@ -86,15 +85,15 @@ function Main() {
 
 
             </div>
-            <div className="grid mt-8 overflow-visible mx-48  grid-cols-3 space-x-4 mb-8  shadow-lg shadow-gold divide-x-1 divide-x-blue">
-                <div className="   text-center relative col-span-2 px-2 py-6 flex space-x-3">
+            <div className="grid mt-8 overflow-visible mx-48 grid-col-1 lg:grid-cols-3 space-x-4 mb-8  shadow-lg shadow-gold divide-x-1 divide-x-blue">
+                <div className="   text-center relative lg:col-span-2 px-2 py-6 flex space-x-3">
                     <div className="absolute inset-x-0 -top-3">
                         <img src={bgSell} className="absolute left-1/2 -translate-x-1/2 -mt-3 h-10 object-cover" />
-                        <div class="index-2 relative text-xs">BEST SELLERS</div>
+                        <div className="index-2 relative text-xs">BEST SELLERS</div>
                     </div>
                     {
                         bestSell.map((item, id) => {
-                            return <div className="flex-1">
+                            return <div className="flex-1" key={id}>
                                 <div className="w-full h-32 border-4 border-gold">
                                     <img src={item.img} className=" w-full h-full object-cover" />
                                 </div>

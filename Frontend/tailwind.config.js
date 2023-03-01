@@ -7,7 +7,7 @@ module.exports = {
      'red':'#941320',
      'blue':'#3FAAE0', 
      'white':'#FFFFFF', 
-     'black':'#000000', 
+     'black':'#000000',  
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
