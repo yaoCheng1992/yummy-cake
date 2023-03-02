@@ -1,9 +1,11 @@
-import React from "react";
+import React ,{useEffect ,useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logo from './logo.svg'
 import './style.css'
 import { Link, Outlet } from "react-router-dom";
 function Header() {
+    useEffect(()=>{ 
+    },)
     return <div className="  ">
         <div className=" bg-gold shadow-xl mb-24 h-11 grid grid-cols-10 grid-rows-1">
             <div className="col-span-6 grid grid-cols-3 gap-3">
@@ -26,7 +28,7 @@ function Header() {
                 <button className=" pr-6">
                     <Link to='/login'>Login</Link>
                 </button>
-                <button className=" pl-6">Register</button>
+                <Link to='/register' className=" pl-6">Register</Link>
             </div>
 
         </div>

@@ -15,7 +15,8 @@ import logo from '../../../src/images/p12.jpg';
 import Header from '../../Header';
 import { Google, Send } from '@mui/icons-material';
 import { Switch } from '@mui/material';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
+import Server from '../../Server'
 
 
 function Copyright(props) {
@@ -54,6 +55,7 @@ const switchHandler = (event) => {
       email: data.get('email'),
       password: data.get('password'),
     });
+    Server.login(data).then(res=>'=========')
   };
 
   return (
