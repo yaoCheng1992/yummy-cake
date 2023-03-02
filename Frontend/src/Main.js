@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import {Link} from "react-router-dom";
 import BannerSwiper from './components/BannerSwiper'
 import './style.css'
+import { Link, Outlet } from 'react-router-dom'
 
 import Img1 from './images/p1.jpg'
 import Img2 from './images/p2.jpg'
@@ -17,7 +17,7 @@ import Header from "./Header";
 import { ThemeProvider } from "@mui/system";
 
 function Main() {
-    
+
     let pros = [
         {
             img: Img1,
@@ -58,8 +58,7 @@ function Main() {
         },
     ]
     return <div>
-        <Header></Header>
-        <div className="pt-8">
+        <div className={` pt-8`}  >
             <BannerSwiper ></BannerSwiper>
             <div className="grid  mt-4 mx-8 grid-cols-1 sm:mx-48 lg:grid-cols-3 gap-4 space-x-4  ">
                 {pros.map((item, id) => {
@@ -105,7 +104,7 @@ function Main() {
                     }
                     <button className="absolute    text-xs font-bold right-0 -bottom-4   bg-black px-4 py-2 text-white hover:bg-blue">ORDER NOW</button>
                 </div>
-                <div className=" px-2 py-6">              
+                <div className=" px-2 py-6">
                     <div className="">
                         <h2 className="font-sans font-bold border-b-2 leading-8 border-b-gold">LASTEST NEWS</h2>
                         <p className="text-xs py-2 leading-5">Valentine day special off for you : we can 80% off on all the cakes to all the customers , the activity end at 30.Febary 2023.</p>
@@ -114,7 +113,7 @@ function Main() {
                 </div>
             </div>
         </div>
-        <Footer></Footer>
+
     </div>
 }
 export default Main
