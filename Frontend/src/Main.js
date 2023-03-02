@@ -14,6 +14,8 @@ import Img8 from './images/p8.jpg'
 import bgSell from './images/bg-sell.png'
 import Footer from "./Footer";
 import Header from "./Header";
+import { ThemeProvider } from "@mui/system";
+
 function Main() {
     
     let pros = [
@@ -58,7 +60,6 @@ function Main() {
     return <div>
         <Header></Header>
         <div className="pt-8">
-            
             <BannerSwiper ></BannerSwiper>
             <div className="grid  mt-4 mx-8 grid-cols-1 sm:mx-48 lg:grid-cols-3 gap-4 space-x-4  ">
                 {pros.map((item, id) => {
