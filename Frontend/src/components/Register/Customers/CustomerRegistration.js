@@ -60,10 +60,8 @@ export default function CustomerRegistration() {
     let flag = true
     let regx = /.+/
     let regx1 = /.+@\w+\.\w+/ 
-    let regx2_1 = /(?<lowercase>[a-z]+)/g
-    let regx2_2 = /(?<uppercase>[A-Z]+)/g
-    let regx2_3 = /(?<number>\d)+/g
-    let regx2_4 = /(?<symbol>[`~!@#$%\^&*()-=\+\\\/\[\]'";:,\.\<\>]+)/g
+    let regx2 =/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    
      if(!regx.test(params.firstName) ){
       setVal1({tf:true,tip:'please enter your first name'})
       flag = false
@@ -72,11 +70,11 @@ export default function CustomerRegistration() {
       setVal2({tf:true,tip:'please enter your last name'})
       flag = false
      } 
-     if(!regx.test(params.email) || (!regx1.test(params.email)&&regx1.match(params.email)[0].length>=8)){
+     if(!regx.test(params.email) || (!regx1.test(params.email))){
       setVal3({tf:true,tip:!regx.test(params.email)?'please enter your email':'email not valid'})
       flag = false
      }
-     if(!regx.test(params.password) || !regx2_1.test(params.password) ||!regx2_2.test(params.password)||!regx2_3.test(params.password)||!regx2_4.test(params.password)||params.password.length>=8){
+     if(!regx.test(params.password) || !regx2.test(params.password)){
       setVal4({tf:true,tip:!regx.test(params.password)?'please enter your password':'password should be at least 8 length and contains number,symbol,uppercase letter and lower letter'})
       flag = false
      }
