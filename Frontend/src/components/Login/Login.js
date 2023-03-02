@@ -14,6 +14,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from '../../../src/images/p12.jpg';
 import Header from '../../Header';
 import { Google, Send } from '@mui/icons-material';
+import { Switch } from '@mui/material';
+import { useState } from 'react';
+
 
 function Copyright(props) {
   return (
@@ -28,9 +31,22 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+});
+
+
 
 export default function SignIn() {
+  let [checked, setChecked] = useState(false);
+
+const switchHandler = (event) => {
+  setChecked(event.target.checked);
+  theme.palette.mode='dark';
+  console.log(theme);
+};
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -82,6 +98,7 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            <FormControlLabel checked={checked} onClick={switchHandler} control={<Switch  />} label="Dark mode" />
             <Button
               type="submit"
               fullWidth
@@ -90,7 +107,7 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Button fullWidth startIcon={<Google />} variant="outlined" >Continue with google</Button>
+            <Button fullWidth startIcon={<Google />} variant="outlined" disabled >Continue with google</Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
@@ -98,12 +115,13 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
+          
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
