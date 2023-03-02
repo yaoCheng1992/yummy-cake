@@ -39,7 +39,6 @@ function Copyright(props) {
 
 export default function CustomerRegistration() {
   const handleSubmit = (event) => {
-    console.log(event)
     event.preventDefault();
    
     const data = new FormData(event.currentTarget);
@@ -50,13 +49,8 @@ export default function CustomerRegistration() {
        email:data.get('email'),
        password:data.get('password')
     }
-    console.log(params)
-     if(!validateField(params)){
-       return
-    }
- 
-     console.log(params,'after')
-    Server.register(params).then(res=>'=========')
+    console.log(params);
+    Server.customerRegister(params).then(res=>alert('ok'))
   }; 
   let [val1,setVal1] = useState({tf:false,tip:''});
   let [val2,setVal2] = useState({tf:false,tip:''});

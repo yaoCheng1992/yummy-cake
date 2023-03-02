@@ -14,9 +14,16 @@ import Img8 from './images/p8.jpg'
 import bgSell from './images/bg-sell.png'
 import Footer from "./Footer";
 import Header from "./Header";
-import { ThemeProvider } from "@mui/system";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from "@mui/material";
 
 function Main() {
+
+    const theme = createTheme({
+        palette: {
+          mode: 'dark',
+        },
+      });
 
     let pros = [
         {
@@ -58,6 +65,8 @@ function Main() {
         },
     ]
     return <div>
+        <ThemeProvider theme={theme}>
+        <CssBaseline/>
         <div className={` pt-8`}  >
             <BannerSwiper ></BannerSwiper>
             <div className="grid  mt-4 mx-8 grid-cols-1 sm:mx-48 lg:grid-cols-3 gap-4 space-x-4  ">
@@ -113,7 +122,7 @@ function Main() {
                 </div>
             </div>
         </div>
-
+        </ThemeProvider>
     </div>
 }
 export default Main

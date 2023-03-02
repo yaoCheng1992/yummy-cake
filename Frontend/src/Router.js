@@ -25,21 +25,22 @@ const Router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register/>
+      },
+      {
+        path: "/customer-registration",
+        element: <CustomerRegistration/>
       }
     ]
   },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register/>
-  },
-  {
-    path: "/customer-registration",
-    element: <CustomerRegistration/>
-  }
+ 
    
 ]);
 export default Router
