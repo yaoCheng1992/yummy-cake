@@ -15,8 +15,8 @@ import logo from '../../../src/images/p12.jpg';
 import Header from '../../Header';
 import { Google, Send } from '@mui/icons-material';
 import { Switch } from '@mui/material';
-import { useState ,useEffect} from 'react';
-import Server from '../../Server'
+import { useState } from 'react';
+
 
 
 function Copyright(props) {
@@ -32,11 +32,19 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme({
+let lightTheme = createTheme({
   palette: {
     mode: 'light',
   },
 });
+
+let darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+let theme = lightTheme;
 
 
 
@@ -45,8 +53,7 @@ export default function SignIn() {
 
 const switchHandler = (event) => {
   setChecked(event.target.checked);
-  theme.palette.mode='dark';
-  console.log(theme);
+  theme = event.target.checked ? darkTheme : lightTheme;
 };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,7 +62,6 @@ const switchHandler = (event) => {
       email: data.get('email'),
       password: data.get('password'),
     });
-    Server.login(data).then(res=>'=========')
   };
 
   return (
@@ -100,7 +106,7 @@ const switchHandler = (event) => {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <FormControlLabel checked={checked} onClick={switchHandler} control={<Switch  />} label="Dark mode" />
+            <FormControlLabel disabled checked={checked} onClick={switchHandler} control={<Switch  />} label="Dark mode" />
             <Button
               type="submit"
               fullWidth
