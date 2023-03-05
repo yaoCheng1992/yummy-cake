@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import pictureCustomers from '../../../src/images/p25.jpg';
-import pictureOwners from '../../../src/images/p32.jpg';
+import pictureCustomers from '../../../src/images/p11.jpg';
+import pictureOwners from '../../../src/images/p27.jpg';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material/';
 import Grid from '@mui/material/Grid';
@@ -24,7 +24,7 @@ export default function Register() {
     <CssBaseline />
     <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 h-screen">
        
-        <Card sx={{ maxWidth: 500 }} className="sm:justify-self mb-3" >
+        <Card sx={{ maxWidth: 400 }} className="sm:justify-self" >
             <CardMedia
             component="img"
             alt="green iguana"
@@ -44,7 +44,7 @@ export default function Register() {
             </CardActions>
         </Card>
         
-        <Card sx={{ maxWidth: 500 }} className="sm:justify-self" >
+        <Card sx={{ maxWidth: 400 }} className="sm:justify-self" >
             <CardMedia
             component="img"
             alt="green iguana"

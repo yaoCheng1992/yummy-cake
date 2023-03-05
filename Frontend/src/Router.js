@@ -10,6 +10,7 @@ import Login from './components/login/Login';
 import Products from './Products' 
 import CustomerRegistration from './components/Register/Customers/CustomerRegistration';
 import Register from './components/Register/Register'; 
+import SuccessRegistration from './components/Register/SuccessRegistration';
 const Router = createBrowserRouter([
   {
     element: <>
@@ -40,6 +41,10 @@ const Router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/activate/customer/:id",
+    element: <SuccessRegistration />
+  }
  
    
 ]);

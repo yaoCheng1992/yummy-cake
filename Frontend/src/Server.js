@@ -14,9 +14,15 @@ class Server {
     } 
     customerRegister(params) {
         return Axios.post(Api.customerRegister, params, {headers: {
-            'Content-Type': 'application/json'
-          }})
+            'Content-Type': 'application/json',
+          }},)
     } 
+
+    customerActivation(id){
+        return Axios.post(Api.customerActivation + id,{headers: {
+            'Content-Type': 'application/json',
+        }})
+    }
     
 }
 
