@@ -6,9 +6,7 @@ import Router from "./Router"
 function App(props) {
 
   return (
-    <React.StrictMode>
       <RouterProvider router={Router} />
-    </React.StrictMode>
   )
 }
 export default App;
