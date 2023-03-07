@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BrowserRouter, Route, RouterProvider, useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,6 +17,11 @@ import Header from '../../Header';
 import { Google, Send } from '@mui/icons-material';
 import { Switch } from '@mui/material';
 import { useState } from 'react';
+import Server from '../../Server';
+import jwt_decode, { JwtPayload } from 'jwt-decode';
+import GuardedRoute from '../../GuardedRoute';
+import CustomerDashboard from '../Register/Customers/CustomerDashboard';
+
 
 
 
@@ -46,8 +52,6 @@ let darkTheme = createTheme({
 
 let theme = lightTheme;
 
-
-
 export default function SignIn() {
   let [checked, setChecked] = useState(false);
 
@@ -55,13 +59,29 @@ const switchHandler = (event) => {
   setChecked(event.target.checked);
   theme = event.target.checked ? darkTheme : lightTheme;
 };
+const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
+    let params = {
+      username: data.get('email'),
       password: data.get('password'),
-    });
+    }
+
+    Server.login(params) .then((res) => {
+        let token = res.headers.authorization;
+        let auth = token !== undefined;
+        if (auth) {
+          localStorage.setItem('token', token);
+          const decoded = jwt_decode(token);
+          console.log(auth);
+          navigate("/customer/dashboard");
+          
+        }
+        
+      });
   };
 
   return (
