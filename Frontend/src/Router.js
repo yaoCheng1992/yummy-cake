@@ -9,6 +9,7 @@ import Footer from './Footer'
 import Main from './Main'
 import Login from './components/login/Login';
 import Products from './Products' 
+import ProductDetail from './ProductDetail' 
 import CustomerRegistration from './components/Register/Customers/CustomerRegistration';
 import Register from './components/Register/Register'; 
 import SuccessRegistration from './components/Register/Customers/SuccessRegistrationCustomer';
@@ -36,6 +37,10 @@ const Router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "productDetail",
+        element: <ProductDetail />,
       },
       {
         path: '/login',

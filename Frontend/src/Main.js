@@ -64,8 +64,7 @@ function Main() {
     ]
     return <div>
         <ThemeProvider theme={theme}>
-        <CssBaseline/>
-        <div className={` pt-8`}  >
+            <div className={` pt-8`}  >
             <BannerSwiper ></BannerSwiper>
             <div className="grid  mt-4 mx-8 grid-cols-1 sm:mx-48 lg:grid-cols-3 gap-4 space-x-4  ">
                 {pros.map((item, id) => {
