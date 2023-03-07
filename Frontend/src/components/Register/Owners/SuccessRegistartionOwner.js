@@ -5,16 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid, Stack } from '@mui/material';
-import activationPicture from '../../images/activation.png';
+import activationPicture from '../../../images/activation.png';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useParams } from 'react-router-dom';
-import Server from '../../Server';
+import Server from '../../../Server';
 
-function SuccessRegistration(props) {
+function SuccessRegistrationOwner(props) {
   const routeParams = useParams();
  
   useEffect(() => { 
-    Server.customerActivation(routeParams.id).then(res=>alert('ok'));
+    Server.ownerActivation(routeParams.id).then(res=>alert('ok'));
     }, [])
   
     return ( 
@@ -44,4 +44,4 @@ function SuccessRegistration(props) {
     );
 }
   
-export default SuccessRegistration;
+export default SuccessRegistrationOwner;
