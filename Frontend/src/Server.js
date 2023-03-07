@@ -17,8 +17,20 @@ class Server {
           }},)
     } 
 
+    ownerRegister(params) {
+        return Axios.post(Api.ownerRegister, params, {headers: {
+            'Content-Type': 'application/json',
+          }},)
+    } 
+
     customerActivation(id){
         return Axios.post(Api.customerActivation + id,{headers: {
+            'Content-Type': 'application/json',
+        }})
+    }
+
+    ownerActivation(id){
+        return Axios.post(Api.ownerActivation + id,{headers: {
             'Content-Type': 'application/json',
         }})
     }

@@ -11,9 +11,15 @@ import Login from './components/login/Login';
 import Products from './Products' 
 import CustomerRegistration from './components/Register/Customers/CustomerRegistration';
 import Register from './components/Register/Register'; 
-import SuccessRegistration from './components/Register/SuccessRegistration';
-import GuardedRoute from './GuardedRoute';
+import SuccessRegistration from './components/Register/Customers/SuccessRegistrationCustomer';
+import GuardedRoute from './components/GuardedRoute';
+import OwnerRegistration from './components/Register/Owners/OwnerRegistration';
+import SuccessRegistrationCustomer from './components/Register/Customers/SuccessRegistrationCustomer';
+import SuccessRegistrationOwner from './components/Register/Owners/SuccessRegistartionOwner';
+import OwnerDashboard from './components/Register/Owners/OwnerDashboard';
 import CustomerDashboard from './components/Register/Customers/CustomerDashboard';
+import RoleConst from './RoleConst';
+
 
 const Router = createBrowserRouter([
   {
@@ -44,14 +50,27 @@ const Router = createBrowserRouter([
         element: <CustomerRegistration/>
       },
       {
-        path: "/customer/dashboard",
-        element: <GuardedRoute routeRedirect={"/login"}/>
+        path: "/owner-registration",
+        element: <OwnerRegistration/>
+      },
+      {
+        path: "/owner-dashboard",
+        element: <GuardedRoute component={<OwnerDashboard/>} routeRedirect={"/login"} roleConst={RoleConst.owner} />
+      }
+      ,
+      {
+        path: "/customer-dashboard",
+        element: <GuardedRoute component={<CustomerDashboard/>} routeRedirect={"/login"} roleConst={RoleConst.customer} />
       }
     ]
   },
   {
     path: "/activate/customer/:id",
-    element: <SuccessRegistration />
+    element: <SuccessRegistrationCustomer />
+  },
+  {
+    path: "/activate/owner/:id",
+    element: <SuccessRegistrationOwner />
   }
  
 

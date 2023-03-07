@@ -19,8 +19,7 @@ import { Switch } from '@mui/material';
 import { useState } from 'react';
 import Server from '../../Server';
 import jwt_decode, { JwtPayload } from 'jwt-decode';
-import GuardedRoute from '../../GuardedRoute';
-import CustomerDashboard from '../Register/Customers/CustomerDashboard';
+import RoleConst from '../../RoleConst';
 
 
 
@@ -76,9 +75,14 @@ const navigate = useNavigate();
         if (auth) {
           localStorage.setItem('token', token);
           const decoded = jwt_decode(token);
-          console.log(auth);
-          navigate("/customer/dashboard");
+          const role = decoded.authorities[0];
           
+          if(role===RoleConst.owner){
+            navigate("/owner-dashboard");
+          } 
+          if(role===RoleConst.customer){
+            navigate("/customer-dashboard");
+          }
         }
         
       });
