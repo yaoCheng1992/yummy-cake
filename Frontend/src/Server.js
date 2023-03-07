@@ -2,7 +2,6 @@ import Axios from 'axios'
 import Api from './Api'
 class Server {
     login(params) {
-
         return Axios.post(Api.login,  params ,  {headers: {
             'Content-Type': 'application/json'
           }})

@@ -20,9 +20,7 @@ import { CssBaseline } from "@mui/material";
 function Main() {
 
     const theme = createTheme({
-        palette: {
-          mode: 'dark',
-        },
+ 
       });
 
     let pros = [
