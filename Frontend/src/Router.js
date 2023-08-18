@@ -12,7 +12,6 @@ import Products from './Products'
 import ProductDetail from './ProductDetail' 
 import CustomerRegistration from './components/Register/Customers/CustomerRegistration';
 import Register from './components/Register/Register'; 
-import SuccessRegistration from './components/Register/Customers/SuccessRegistrationCustomer';
 import GuardedRoute from './components/GuardedRoute';
 import OwnerRegistration from './components/Register/Owners/OwnerRegistration';
 import SuccessRegistrationCustomer from './components/Register/Customers/SuccessRegistrationCustomer';
@@ -20,6 +19,7 @@ import SuccessRegistrationOwner from './components/Register/Owners/SuccessRegist
 import OwnerDashboard from './components/Register/Owners/OwnerDashboard';
 import CustomerDashboard from './components/Register/Customers/CustomerDashboard';
 import RoleConst from './RoleConst';
+import AdminStorageDashboard from './components/Admin/AdminStorageDashboard';
 
 
 const Router = createBrowserRouter([
@@ -50,6 +50,7 @@ const Router = createBrowserRouter([
         path: "/register",
         element: <Register/>
       },
+     
       {
         path: "/customer-registration",
         element: <CustomerRegistration/>
@@ -76,7 +77,12 @@ const Router = createBrowserRouter([
   {
     path: "/activate/owner/:id",
     element: <SuccessRegistrationOwner />
-  }
+  },
+
+  {
+    path: "/admin-storage",
+    element: <AdminStorageDashboard/>
+  },
  
 
    
