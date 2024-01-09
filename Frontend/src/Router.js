@@ -20,6 +20,7 @@ import SuccessRegistrationOwner from './components/Register/Owners/SuccessRegist
 import OwnerDashboard from './components/Register/Owners/OwnerDashboard';
 import CustomerDashboard from './components/Register/Customers/CustomerDashboard';
 import RoleConst from './RoleConst';
+import AdminStorage from './components/Admin/AdminStorage';
 
 
 const Router = createBrowserRouter([
@@ -46,6 +47,7 @@ const Router = createBrowserRouter([
         path: '/login',
         element: <Login />,
       },
+
       {
         path: "/register",
         element: <Register/>
@@ -76,9 +78,11 @@ const Router = createBrowserRouter([
   {
     path: "/activate/owner/:id",
     element: <SuccessRegistrationOwner />
-  }
- 
-
+  },
+  {
+    path: '/admin/storage',
+    element: <AdminStorage />,
+  },
    
 ]);
 export default Router
