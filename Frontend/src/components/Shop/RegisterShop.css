@@ -1,0 +1,6 @@
+.grid-line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #000; /* Color and style can be adjusted */
+    margin: 0;
+  }
