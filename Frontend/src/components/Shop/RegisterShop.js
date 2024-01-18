@@ -7,7 +7,10 @@ import Paper from "@mui/material/Paper";
 import InputLabel from "@mui/material/InputLabel";
 import StoreIcon from '@mui/icons-material/Store';
 import MapIcon from '@mui/icons-material/Map';
-import { FormControl, MenuItem, Select } from "@mui/material";
+import { Button, FormControl, IconButton, MenuItem, Select } from "@mui/material";
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { DropzoneArea } from "mui-file-dropzone";
+import PhotoIcon from '@mui/icons-material/Photo';
 
 export default function RegisterShop() {
   const [age, setAge] = React.useState("");
@@ -17,18 +20,18 @@ export default function RegisterShop() {
   };
 
   const categories = [
-    "science",
-    "sports",
-    "business",
-    "politics",
-    "entertainment",
-    "technology",
-    "world",
-    "all"
+    "Serbia",
+    "Macedonia",
+    "Grece",
+    "Croatia",
+    "Bosnia and Hercegovina",
+    "Montenegro",
+    "Romania",
+    "Slovenia"
   ];
   return (
     <React.Fragment>
-      <Paper  sx={{ marginRight: "25%", marginLeft: "25%" }}>
+      <Paper  sx={{ marginRight: "20%", marginLeft: "20%" }}>
         <Box sx={{ padding: 5 }}>
           <Typography variant="h5" gutterBottom sx={{ paddingBottom: 5 }} className="text-center">
             Register shop <StoreIcon color="info" fontSize="large"/>
@@ -116,7 +119,7 @@ export default function RegisterShop() {
                 />
             </Grid>
           </Grid>
-          <Grid container spacing={3} gutterBottom sx={{ paddingBottom: 2,paddingTop: 5}}>
+          <Grid container spacing={3} gutterBottom sx={{ paddingBottom: 5,paddingTop: 5}}>
             <Grid item xs={12} sm={8}>
               <TextField
                   id="nameOfShop"
@@ -129,8 +132,30 @@ export default function RegisterShop() {
                 />
             </Grid>
           </Grid>
+          <Grid item xs={12} sm={2}>
+          <Typography variant="h5" gutterBottom sx={{ paddingBottom: 5 }} className="text-center">
+             Upload Picture <UploadFileIcon color="info" fontSize="large"/>
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={4} className="text-center" gutterBottom sx={{ paddingBottom: 5}}>
+            <DropzoneArea
+							Icon={PhotoIcon}
+              acceptedFiles={['image/*']}
+              filesLimit={10}
+              dropzoneText={"Drag and drop an image here or click"}
+              onChange={(files) => console.log('Files:', files)}
+							showFileNames={true}
+							maxFileSize={10000000}
+            />
+          </Grid>
+					<Grid style={{ float: 'right' }}>
+						<Button variant="contained" color="info">CREATE NEW SHOP</Button>
+					</Grid>
+					<br/>
+					<br/>
         </Box>
       </Paper>
+      
     </React.Fragment>
   );
 }
