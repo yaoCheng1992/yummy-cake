@@ -35,6 +35,11 @@ class Server {
         }})
     }
     
+    registerShop(params){
+        return Axios.post(Api.shopRegister, params,  {headers: {
+            'Content-Type': 'application/json'
+          }})
+    }
 }
 
 
