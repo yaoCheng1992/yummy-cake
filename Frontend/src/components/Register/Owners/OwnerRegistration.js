@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import pictureCustomers from '../../../../src/images/p25.jpg';
+import registerBannerPicture from '../../../../src/images/p12.jpg';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 import { ThemeOptions } from '@mui/material';
 import Server from '../../../Server'
@@ -95,11 +96,13 @@ export default function OwnerRegistration() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-            <BusinessOutlinedIcon/>
-          </Avatar>
+          <Avatar
+            alt="Remy Sharp"
+            src={registerBannerPicture}
+            sx={{ width: 100, height: 100 }}
+          />
           <Typography component="h1" variant="h5">
-            Sign up
+            Sign up - Company
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
