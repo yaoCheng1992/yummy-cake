@@ -5,7 +5,7 @@ const Api = {
     ownerRegister:'http://localhost:9090/api/registration/owner',
     customerActivation:'http://localhost:9090/api/activation/customer/',
     ownerActivation:'http://localhost:9090/api/activation/owner/',
-    shopRegister:'http://localhost:9090/api/shop/register'
+    shopRegister:'http://localhost:9090/api/registration/shop'
 }
 
 export default Api

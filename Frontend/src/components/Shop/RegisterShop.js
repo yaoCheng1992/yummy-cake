@@ -11,6 +11,7 @@ import { Button, FormControl, IconButton, MenuItem, Select } from "@mui/material
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { DropzoneArea } from "mui-file-dropzone";
 import PhotoIcon from '@mui/icons-material/Photo';
+import Server from "../../Server";
 
 export default function RegisterShop() {
   const [age, setAge] = React.useState("");
@@ -18,6 +19,22 @@ export default function RegisterShop() {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+
+  const handleSubmit = (event) => {
+    console.log("test register shop");
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    let params = {
+      name:data.get('name'),
+      country:data.get('country'),
+      city:data.get('city'),
+      province:data.get('province'),
+      zip:data.get('zip')
+   }
+
+   Server.registerShop(params).then(res=>alert('ok'));
+  }; 
 
   const categories = [
     "Serbia",
@@ -32,7 +49,7 @@ export default function RegisterShop() {
   return (
     <React.Fragment>
       <Paper  sx={{ marginRight: "20%", marginLeft: "20%" }}>
-        <Box sx={{ padding: 5 }}>
+        <Box component="form" noValidate sx={{ padding: 5 }} onSubmit={handleSubmit}>
           <Typography variant="h5" gutterBottom sx={{ paddingBottom: 5 }} className="text-center">
             Register shop <StoreIcon color="info" fontSize="large"/>
           </Typography>
@@ -40,8 +57,8 @@ export default function RegisterShop() {
             <Grid item xs={12} sm={12}>
               <TextField
                 required
-                id="nameOfShop"
-                name="nameOfShop"
+                id="name"
+                name="name"
                 label="Name"
                 fullWidth
                 size="small"
@@ -59,7 +76,7 @@ export default function RegisterShop() {
                 <InputLabel id="demo-simple-select-label">Country</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
-                  id="demo-simple-select"
+                  id="country"
                   value={age}
                   label="Country"
                   onChange={handleChange}
@@ -73,8 +90,8 @@ export default function RegisterShop() {
             <Grid item xs={12} sm={4}>
               <TextField
                   required
-                  id="nameOfShop"
-                  name="nameOfShop"
+                  id="city"
+                  name="city"
                   label="City"
                   fullWidth
                   size="small"
@@ -85,8 +102,8 @@ export default function RegisterShop() {
             <Grid item xs={12} sm={4}>
             <TextField
                   required
-                  id="nameOfShop"
-                  name="nameOfShop"
+                  id="zip"
+                  name="zip"
                   label="Zip Code"
                   fullWidth
                   size="small"
@@ -98,8 +115,8 @@ export default function RegisterShop() {
           <Grid container spacing={3} gutterBottom sx={{paddingTop: 2}}>
             <Grid item xs={12} sm={6}>
               <TextField
-                  id="nameOfShop"
-                  name="nameOfShop"
+                  id="address"
+                  name="address"
                   label="Address"
                   fullWidth
                   size="small"
@@ -109,8 +126,8 @@ export default function RegisterShop() {
             </Grid>
             <Grid item xs={12} sm={6}>
             <TextField
-                  id="nameOfShop"
-                  name="nameOfShop"
+                  id="province"
+                  name="province"
                   label="Province"
                   fullWidth
                   size="small"
@@ -122,8 +139,8 @@ export default function RegisterShop() {
           <Grid container spacing={3} gutterBottom sx={{ paddingBottom: 5,paddingTop: 5}}>
             <Grid item xs={12} sm={8}>
               <TextField
-                  id="nameOfShop"
-                  name="nameOfShop"
+                  id="additionalAddress"
+                  name="additionalAddress"
                   label="Additional address"
                   fullWidth
                   size="small"
@@ -149,7 +166,7 @@ export default function RegisterShop() {
             />
           </Grid>
 					<Grid style={{ float: 'right' }}>
-						<Button variant="contained" color="info">CREATE NEW SHOP</Button>
+						<Button type="submit" variant="contained" color="info">CREATE NEW SHOP</Button>
 					</Grid>
 					<br/>
 					<br/>
