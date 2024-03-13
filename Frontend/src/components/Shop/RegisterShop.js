@@ -30,6 +30,8 @@ export default function RegisterShop() {
       country:data.get('country'),
       city:data.get('city'),
       province:data.get('province'),
+      country:data.get('country'),
+      address:data.get('address'),
       zip:data.get('zip')
    }
 
