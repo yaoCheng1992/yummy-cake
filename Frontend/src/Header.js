@@ -6,7 +6,8 @@ import { Link, Outlet } from "react-router-dom";
 import jwt_decode, { JwtPayload } from 'jwt-decode';
 import RoleConst from './RoleConst';
 import { useLocation } from 'react-router-dom';
-
+import StoreIcon from '@mui/icons-material/Store';
+import { Button } from "@mui/material";
 
 function Header() {
     const [homeLabel, setHomeLabel] = useState('HOME');
@@ -36,12 +37,11 @@ function Header() {
     return <div className="  ">
         <div className=" bg-gold shadow-xl mb-24 h-11 grid grid-cols-10 grid-rows-1">
             <div className="col-span-6 grid grid-cols-3 gap-3">
-                <button className="text-right" >MY ACCOUNT</button>
-                <button className="text-left">CHECK OUT</button>
                 <div className="flex place-self-center space-x-2 cursor-pointer">
-                    <FontAwesomeIcon icon='fa-cart-shopping' size="lg" />
-                    <div>Cart </div>
-                    <div>$320</div>
+                    <Link to='/owner-shops'>
+                        <Button variant="contained" className="text-left" color="warning" startIcon={<StoreIcon />}>MY SHOPS</Button>
+                    </Link>
+                    <Button variant="contained" className="text-left" color="info">CHECK OUT</Button>
                 </div>
             </div>
             <form className="col-span-2 relative">
@@ -51,11 +51,14 @@ function Header() {
                     <FontAwesomeIcon className=" " icon="fa-magnifying-glass" size="lg" />
                 </label>
             </form>
-            <div className="col-span-2  place-self-center divide-x   divide-white">
-                <button className=" pr-6">
-                    <Link to='/login'>Login</Link>
-                </button>
-                <Link to='/register' className=" pl-6">Register</Link>
+            <div className="col-span-2  place-self-center divide-x divide-white">
+                <Link to='/login'>
+                    <Button variant="contained" className="text-left" color="info">Login</Button>
+                </Link>
+                &nbsp;&nbsp;&nbsp; 
+                <Link to='/register'>
+                    <Button variant="contained" className="text-left" color="info">Register</Button>
+                </Link>
             </div>
 
         </div>

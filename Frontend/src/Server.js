@@ -38,7 +38,13 @@ class Server {
     registerShop(params){
         return Axios.post(Api.shopRegister, params,  {headers: {
             'Content-Type': 'application/json'
-          }})
+        }})
+    }
+
+    getOwnerShops(ownerId){
+        return Axios.get(Api.ownerShops + ownerId, {headers: {
+            'Content-Type': 'application/json'
+        }})
     }
 }
 

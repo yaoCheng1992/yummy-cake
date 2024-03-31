@@ -22,6 +22,7 @@ import CustomerDashboard from './components/Register/Customers/CustomerDashboard
 import RoleConst from './RoleConst';
 import AdminStorage from './components/Admin/AdminStorage';
 import RegisterShop from './components/Shop/RegisterShop';
+import OwnerShops from './components/OwnerShops/OwnerShops';
 
 
 const Router = createBrowserRouter([
@@ -68,8 +69,11 @@ const Router = createBrowserRouter([
       {
         path: "/register-shop",
         element: <GuardedRoute component={<RegisterShop/>} routeRedirect={"/login"} roleConst={RoleConst.owner} />
-      }
-      ,
+      },
+      {
+        path: "/owner-shops",
+        element: <GuardedRoute component={<OwnerShops/>} routeRedirect={"/login"} roleConst={RoleConst.owner} />
+      },
       {
         path: "/customer-dashboard",
         element: <GuardedRoute component={<CustomerDashboard/>} routeRedirect={"/login"} roleConst={RoleConst.customer} />
@@ -85,9 +89,8 @@ const Router = createBrowserRouter([
     element: <SuccessRegistrationOwner />
   },
   {
-    path: '/admin/storage',
+    path: "/admin/storage",
     element: <AdminStorage />,
   },
-   
 ]);
 export default Router

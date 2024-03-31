@@ -12,6 +12,7 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { DropzoneArea } from "mui-file-dropzone";
 import PhotoIcon from '@mui/icons-material/Photo';
 import Server from "../../Server";
+import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 export default function RegisterShop() {
   const [age, setAge] = React.useState("");
@@ -21,9 +22,12 @@ export default function RegisterShop() {
   };
 
   const handleSubmit = (event) => {
-    console.log("test register shop");
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    let token = localStorage.getItem('token');
+    const decoded = jwt_decode(token);
+    const username = decoded.sub;
 
     let params = {
       name:data.get('name'),
@@ -32,10 +36,12 @@ export default function RegisterShop() {
       province:data.get('province'),
       country:data.get('country'),
       address:data.get('address'),
-      zip:data.get('zip')
+      zip:data.get('zip'),
+      ownerUsername: username,
    }
 
-   Server.registerShop(params).then(res=>alert('ok'));
+  
+    Server.registerShop(params).then(res=>alert('ok'));
   }; 
 
   const categories = [
